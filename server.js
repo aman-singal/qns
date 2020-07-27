@@ -20,13 +20,18 @@ app.use('/api' , route);
 
 
 
-// app.get('/'  , (req,res)=>{
-//     res.send('<h1> ERROR 404 </h1>')
-// })
 
 
+if (process.env.NODE_ENV === "production") {
 
-app.use(express.static('client/build'));
+  app.use(express.static("build"));
+
+
+  app.get("*", (req, res) => {
+       res.sendFile(path.resolve(__dirname, "client" ,  "build", "index.html"));
+   });
+
+ }
 
 app.listen(PORT , ()=>{
     console.log("Server Up and Running")
