@@ -84,7 +84,7 @@ function Register() {
                 // setLoading(true)
                 axios({
                     method: 'post',
-                    url: 'http://localhost:4000/api/signup',
+                    url: 'https://dry-spire-00712.herokuapp.com/api/signup',
                     headers: {}, 
                     data: {
                       email: values.email,

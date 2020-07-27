@@ -149,7 +149,7 @@ export default function CustomizedTables() {
       if(cookies.secureID.privilage === 'Admin'){
         axios({
           method: 'post',
-          url: 'http://localhost:4000/api/allusers',
+          url: 'https://dry-spire-00712.herokuapp.com/api/allusers',
           headers: {}, 
           data: {
             id: cookies.secureID.id,
@@ -193,7 +193,7 @@ export default function CustomizedTables() {
   const handleChange = (email) =>{
     axios({
       method: 'post',
-      url: 'http://localhost:4000/api/update',
+      url: 'https://dry-spire-00712.herokuapp.com/api/update',
       headers: {}, 
       data: {
         id: cookies.secureID.id,

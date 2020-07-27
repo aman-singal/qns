@@ -28,7 +28,7 @@ function Home() {
         if(cookies.secureID){
             axios({
                 method: 'post',
-                url: 'http://localhost:4000/api/access',
+                url: 'https://dry-spire-00712.herokuapp.com/api/access',
                 headers: {}, 
                 data: {
                   id: cookies.secureID.id,
