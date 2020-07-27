@@ -188,9 +188,13 @@ export default function CustomizedTables() {
     setPage(0);
   };
 
+  const [isLoading,setLoading] = useState(false)
   const [rows,setRows] = useState([])
 
   const handleChange = (email) =>{
+
+    setLoading(true)
+
     axios({
       method: 'post',
       url: 'https://dry-spire-00712.herokuapp.com/api/update',
@@ -205,6 +209,7 @@ export default function CustomizedTables() {
         setChanging(prev =>{
           return !prev
         })
+        setLoading(false)
       }
     })
   }
@@ -238,6 +243,7 @@ export default function CustomizedTables() {
                         onChange={() => {handleChange(row.email)}}
                         name="checkedB"
                         color="primary"
+                        disabled={isLoading}
                       />
                     }
                   />
